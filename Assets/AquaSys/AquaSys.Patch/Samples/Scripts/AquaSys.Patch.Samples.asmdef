@@ -1,0 +1,22 @@
+{
+    "name": "AquaSys.Patch.Samples",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e34a5702dd353724aa315fb8011f08c3",
+        "GUID:13ba8ce62aa80c74598530029cb2d649",
+        "GUID:6cfb358a0a823e54b87c4b37732e66dd",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:b35e33884f6755d43b7e0511e88956d0",
+        "GUID:f22fac247a56d2d41b687bb0d900e54e",
+        "GUID:1777f48613af17c4194845eef64fefda"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
