@@ -17,9 +17,6 @@
         "com.unity.scriptablebuildpipeline": "1.20.2",
         "com.unity.modules.assetbundle": "1.0.0",
         "com.unity.modules.unitywebrequest": "1.0.0",
-        "com.unity.modules.unitywebrequestassetbundle": "1.0.0",
-		"com.focus-creative-games.hybridclr_unity": "https://gitee.com/focus-creative-games/hybridclr_unity.git#v2.0.0-rc",
-		"com.cysharp.unitask": "https://github.com/DumoeDss/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#for_yooasset",
-		"com.tuyoogame.yooasset": "https://github.com/DumoeDss/YooAsset.git?path=Assets/YooAsset#for_aqua_patch"
+        "com.unity.modules.unitywebrequestassetbundle": "1.0.0"
     }
 }

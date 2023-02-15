@@ -1,3 +1,4 @@
+using AquaSys.Patch.Encryption;
 using Cysharp.Threading.Tasks;
 using HybridCLR.Extension.Runtime;
 using System;
@@ -8,9 +9,7 @@ using UniFramework.Event;
 using UniFramework.Module;
 using UnityEngine;
 using YooAsset;
-#if CodeStage
-using CodeStage.AntiCheat.Storage;
-#endif
+
 namespace AquaSys.Patch
 {
 	public class StartUp : MonoBehaviour
@@ -194,11 +193,11 @@ namespace AquaSys.Patch
 
 		private void Operation_Completed(AsyncOperationBase obj)
 		{
-			var appDataConfigsHandle = defaultPackage.LoadAssetSync<AppDataConfigs>("StartupDataConfigs/AppDataConfigs.asset");
+			var appDataConfigsHandle = defaultPackage.LoadAssetSync<AppInitDataConfigs>("StartupDataConfigs/AppDataConfigs.asset");
 
-			AppDataConfigs appDataConfigs = appDataConfigsHandle.AssetObject as AppDataConfigs;
+			AppInitDataConfigs appDataConfigs = appDataConfigsHandle.AssetObject as AppInitDataConfigs;
 			string startSceneAddress = appDataConfigs.StartSceneAddress;
-			LoadMetadataForAOTAssembly(defaultPackage, appDataConfigs.aotDllList);
+			LoadMetadataForAOTAssembly(defaultPackage, appDataConfigs.AotDllList);
 			LoadAssembly(defaultPackage, startSceneAddress).Forget();
 
 			appDataConfigsHandle.Release();
@@ -212,58 +211,36 @@ namespace AquaSys.Patch
 		}
 		unsafe void LoadMetadataForAOTAssembly(AssetsPackage assetsPackage, List<string> aotDllList)
 		{
+#if !UNITY_EDITOR
+
 			foreach (var aotDllName in aotDllList)
 			{
 				var textAssetHandle = assetsPackage.LoadAssetAsync<TextAsset>(aotDllName);
 
 				var textAsset = (TextAsset)textAssetHandle.AssetObject;
-#if !UNITY_EDITOR
-#if CodeStage
-			var deviceLockSettings = new DeviceLockSettings(DeviceLockLevel.None);
-			var encryptionSettings = new EncryptionSettings("aot");
-			var settings = new ObscuredFileSettings(encryptionSettings, deviceLockSettings);
-			using (MemoryStream ms = new MemoryStream(textAsset.bytes))
-#endif
-			{
-#if CodeStage
 
-				ObscuredFile obscuredFile = new ObscuredFile(settings);
-				var result = obscuredFile.ReadAllBytes(ms);
-				if (result.Success)
-#endif
+				var datas = textAsset.bytes;
+				try
 				{
-
-
-					try
+					using (MemoryStream ms = new MemoryStream(datas))
 					{
-#if CodeStage
-						var dllBytes = result.Data;
-#else
-						var dllBytes = textAsset.bytes;
-#endif
+						var dllBytes = AESEncrypt.Decrypt(datas, "aot");
 						fixed (byte* ptr = dllBytes)
 						{
 							// 加载assembly对应的dll，会自动为它hook。一旦aot泛型函数的native函数不存在，用解释器版本代码
-							int err = HybridCLR.RuntimeApi.LoadMetadataForAOTAssembly(ptr, dllBytes.Length,1);
+							int err = HybridCLR.RuntimeApi.LoadMetadataForAOTAssembly(ptr, dllBytes.Length, 1);
 							Debug.Log("LoadMetadataForAOTAssembly. :" + aotDllName);
 						}
+						Array.Clear(dllBytes, 0, dllBytes.Length);
 					}
-					catch (Exception ex)
-					{
-						Debug.LogError("LoadMetadataForAOTAssembly. ex:" + ex.ToString());
-					}
-
-		}
-#if CodeStage
-				else
-				{
-					UnityEngine.Debug.LogError(result.Error);
 				}
-#endif
-	}
-#endif
+				catch (Exception ex)
+				{
+					Debug.LogError("LoadMetadataForAOTAssembly. ex:" + ex.ToString());
+				}
 
 			}
+#endif
 		}
 
 		/// <summary>
