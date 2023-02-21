@@ -1,0 +1,25 @@
+{
+    "name": "YooAsset.Editor",
+    "rootNamespace": "",
+    "references": [
+        "YooAsset",
+        "Unity.ScriptableBuildPipeline",
+        "Unity.ScriptableBuildPipeline.Editor",
+        "HybridCLR.Extension.Editor",
+        "HybridCLR.Extension.Runtime",
+        "HybridCLR.Editor",
+        "AquaSys.Patch.Encryption",
+        "AquaSys.Tools"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

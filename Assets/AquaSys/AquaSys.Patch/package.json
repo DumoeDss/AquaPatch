@@ -8,6 +8,13 @@
         "name": "Sayo",
         "url": "https://github.com/DumoeDss"
     },
+	"samples": [
+        {
+            "displayName": "Sample",
+            "description": "",
+            "path": "Samples~"
+        }
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/DumoeDss/AquaPatch.git"

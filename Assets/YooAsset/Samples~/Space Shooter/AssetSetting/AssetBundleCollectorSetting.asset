@@ -1,0 +1,758 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185f6993d5150494d98da50e26cb1c25, type: 3}
+  m_Name: AssetBundleCollectorSetting
+  m_EditorClassIdentifier: 
+  ShowPackageView: 1
+  EnableAddressable: 1
+  UniqueBundleName: 0
+  ShowEditorAlias: 0
+  Packages:
+  - PackageName: DefaultPackage
+    PackageDesc: 
+    IncludeInBuild: 1
+    Groups:
+    - GroupName: battle
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameRes/Effect
+        CollectorGUID: 80d76514758554baaa96a9efffe9f3ef
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: effect
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameRes/Entity
+        CollectorGUID: 4d7c84745db8e884f8020a8c5356e67c
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameRes/Audio
+        CollectorGUID: 306075fbe00b24251b6c889984a7a7d5
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+    - GroupName: shader
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/ShaderVariants
+        CollectorGUID: 00781758c26692e40a9634ddeac838be
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackShaderVariants
+        FilterRuleName: CollectShaderVariants
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+    - GroupName: scene
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameRes/Scene
+        CollectorGUID: 6070eae1192f2994887f2983a177d503
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackSeparately
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+    - GroupName: ugui
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameRes/UIImage
+        CollectorGUID: 30c57db62bb02a24590e7046d3a9e33a
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameRes/UIPanel
+        CollectorGUID: 12d33f33f3a55224c9c747d7bffa1c68
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackSeparately
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameRes/UISprite
+        CollectorGUID: 01865ad6f7c806147b6cb37f2d83bc96
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackTopDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+    - GroupName: share_assets_yooasset_samples_space shooter_gameart_effect.bundle
+      GroupDesc: "\u81EA\u52A8\u4F9D\u8D56"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/part_enginePulse_dff.tif
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/fx_enemyShip_engines_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/part_jet_core_dff.tif
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/part_jet_core_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/part_jet_flare_dff.tif
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/part_jet_flare_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+    - GroupName: auto_dependencies_assets_yooasset_samples_space shooter_gameart_effect.bundle
+      GroupDesc: "\u81EA\u52A8\u4F9D\u8D56"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/part_glow_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/part_spark_small_dff.tif
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/part_spark_white_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/part_spark_large_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/part_shockwave_dff.tif
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/part_spark_large_dff.tif
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/part_shockwave_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/part_flash_dff.tif
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/part_spark_blue_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/part_blast_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/part_spark_yellow_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/fx_lazer_cyan_dff.tif
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/fx_bolt_cyan_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/fx_lazer_orange_dff.tif
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/fx_bolt_orange_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/part_star_dff.tif
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Effect/part_star_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+    - GroupName: auto_dependencies_assets_yooasset_samples_space shooter_gameart_entity_asteroid_prop_asteroid_01.bundle
+      GroupDesc: "\u81EA\u52A8\u4F9D\u8D56"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Asteroid/prop_asteroid_01/prop_asteroid_01_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Asteroid/prop_asteroid_01/prop_asteroid_01.FBX
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Asteroid/prop_asteroid_01/prop_asteroid_01_dff.tif
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Asteroid/prop_asteroid_01/prop_asteroid_01_nrm.tif
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+    - GroupName: auto_dependencies_assets_yooasset_samples_space shooter_gameart_entity_asteroid_prop_asteroid_01_materials.bundle
+      GroupDesc: "\u81EA\u52A8\u4F9D\u8D56"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Asteroid/prop_asteroid_01/Materials/prop_asteroid_01_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+    - GroupName: auto_dependencies_assets_yooasset_samples_space shooter_gameart_entity_asteroid_prop_asteroid_02.bundle
+      GroupDesc: "\u81EA\u52A8\u4F9D\u8D56"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Asteroid/prop_asteroid_02/prop_asteroid_02_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Asteroid/prop_asteroid_02/prop_asteroid_02_nrm.tif
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Asteroid/prop_asteroid_02/prop_asteroid_02_dff.tif
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Asteroid/prop_asteroid_02/prop_asteroid_02.FBX
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+    - GroupName: auto_dependencies_assets_yooasset_samples_space shooter_gameart_entity_asteroid_prop_asteroid_02_materials.bundle
+      GroupDesc: "\u81EA\u52A8\u4F9D\u8D56"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Asteroid/prop_asteroid_02/Materials/prop_asteroid_02_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+    - GroupName: auto_dependencies_assets_yooasset_samples_space shooter_gameart_entity_asteroid_prop_asteroid_03.bundle
+      GroupDesc: "\u81EA\u52A8\u4F9D\u8D56"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Asteroid/prop_asteroid_03/prop_asteroid_03_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Asteroid/prop_asteroid_03/prop_asteroid_03_dff.tif
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Asteroid/prop_asteroid_03/prop_asteroid_03.FBX
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Asteroid/prop_asteroid_03/prop_asteroid_03_nrm.tif
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+    - GroupName: auto_dependencies_assets_yooasset_samples_space shooter_gameart_entity_asteroid_prop_asteroid_03_materials.bundle
+      GroupDesc: "\u81EA\u52A8\u4F9D\u8D56"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Asteroid/prop_asteroid_03/Materials/prop_asteroid_03_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+    - GroupName: share_assets_yooasset_samples_space shooter_gameart_scene.bundle
+      GroupDesc: "\u81EA\u52A8\u4F9D\u8D56"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Scene/cube_junkyard_sharp.cubemap
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Scene/tile_nebula_green_dff.tif
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Scene/tile_nebula_green_dff.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+    - GroupName: auto_dependencies_assets_yooasset_samples_space shooter_gameart_entity_vehicle_vehicle_playership_materials.bundle
+      GroupDesc: "\u81EA\u52A8\u4F9D\u8D56"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Vehicle/vehicle_playerShip/Materials/vehicle_playerShip_glass_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Vehicle/vehicle_playerShip/Materials/vehicle_playerShip_metal_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+    - GroupName: auto_dependencies_assets_yooasset_samples_space shooter_gameart_entity_vehicle_vehicle_playership.bundle
+      GroupDesc: "\u81EA\u52A8\u4F9D\u8D56"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Vehicle/vehicle_playerShip/vehicle_playerShip.FBX
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Vehicle/vehicle_playerShip/vehicle_playerShip_metal_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Vehicle/vehicle_playerShip/vehicle_playerShip_glass_mat.mat
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Vehicle/vehicle_playerShip/vehicle_playerShip_collider.FBX
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Vehicle/vehicle_playerShip/vehicle_playerShip_orange_nrm.tif
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Vehicle/vehicle_playerShip/vehicle_playerShip_orange_dff.tif
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+    - GroupName: auto_dependencies_assets_yooasset_samples_space shooter_gameart_scene.bundle
+      GroupDesc: "\u81EA\u52A8\u4F9D\u8D56"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Scene/cube_junkyard_soft.cubemap
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+    - GroupName: share_assets_yooasset_samples_space shooter_gameart_uifont.bundle
+      GroupDesc: "\u81EA\u52A8\u4F9D\u8D56"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/UIFont/zekton
+          free.ttf
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+    - GroupName: auto_dependencies_assets_yooasset_samples_space shooter_gameart_uianim.bundle
+      GroupDesc: "\u81EA\u52A8\u4F9D\u8D56"
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/UIAnim/UIBgEffect.anim
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/UIAnim/UIBgEffect.controller
+        CollectorGUID: 
+        CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: 
+        IsMultiPlatform: 0
+        IsAssembly: 0
+    - GroupName: testship
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/GameArt/Entity/Vehicle/vehicle_enemyShip
+        CollectorGUID: 62d1ca6b401f5b546b7b6edfb80ad299
+        CollectorType: 0
+        AddressRuleName: AddressByAddressAndFilePath
+        PackRuleName: PackGroup
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: testship
+        IsMultiPlatform: 0
+        IsAssembly: 0
+  - PackageName: PatchPackage
+    PackageDesc: 
+    IncludeInBuild: 1
+    Groups:
+    - GroupName: TestGroup
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/YooAsset/Samples/TestMultiPlatform
+        CollectorGUID: 29b215325aefd2e4cbe86676d9ff7e87
+        CollectorType: 0
+        AddressRuleName: AddressByAddressAndFilePath
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        Address: Test
+        IsMultiPlatform: 1
+        IsAssembly: 0
