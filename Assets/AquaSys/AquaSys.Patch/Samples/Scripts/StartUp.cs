@@ -205,7 +205,7 @@ namespace AquaSys.Patch
 
 		async UniTask LoadAssembly(AssetsPackage assetsPackage, string StartSceneAddress)
 		{
-			await assetsPackage.LoadAssembly();
+			await assetsPackage.LoadAssembly("HybridCLRHotDll.");
 
 			assetsPackage.LoadSceneAsync(StartSceneAddress);
 		}
@@ -224,7 +224,7 @@ namespace AquaSys.Patch
 				{
 					using (MemoryStream ms = new MemoryStream(datas))
 					{
-						var dllBytes = AESEncrypt.Decrypt(datas, "aot");
+						var dllBytes = AESEncrypt.Decrypt(datas, "HybridCLRAotDll.");
 						fixed (byte* ptr = dllBytes)
 						{
 							// 加载assembly对应的dll，会自动为它hook。一旦aot泛型函数的native函数不存在，用解释器版本代码
