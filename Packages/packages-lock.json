@@ -8,10 +8,11 @@
       "hash": "4aaf5e3a13f6c601f985066939083bfa50a898fc"
     },
     "com.focus-creative-games.hybridclr_unity": {
-      "version": "file:HybridCLR",
+      "version": "https://github.com/DumoeDss/hybridclr_unity.git#for_aqua_patch",
       "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "ba3554137272891f20fe5f88d9c038f97b592fc3"
     },
     "com.tuyoogame.yooasset": {
       "version": "https://github.com/DumoeDss/YooAsset.git?path=Assets/YooAsset#for_aqua_patch",
