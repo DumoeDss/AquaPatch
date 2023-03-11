@@ -28,7 +28,6 @@ namespace YooAsset
 		private AssetBundleCreateRequest _createRequest;
 		private FileStream _fileStream;
 
-
 		public AssetBundleFileLoader(AssetSystemImpl impl, BundleInfo bundleInfo) : base(impl, bundleInfo)
 		{
 		}
@@ -45,8 +44,41 @@ namespace YooAsset
 			{
 				if (MainBundleInfo.LoadMode == BundleInfo.ELoadMode.LoadFromRemote)
 				{
-					_steps = ESteps.Download;
-					FileLoadPath = MainBundleInfo.Bundle.CachedDataFilePath;
+					if (Impl.BundleServices is HostPlayModeImpl)
+                    {
+						var hostPlayModeImpl = Impl.BundleServices as HostPlayModeImpl;
+						if (hostPlayModeImpl.IsBuildinPatchBundle(MainBundleInfo.Bundle))
+						{
+							Debug.Log($"MainBundleInfo.Bundle is BuildinPatchBundle, to load, {MainBundleInfo.Bundle.BundleName}, {MainBundleInfo.Bundle.FileHash}");
+
+							EBundleLoadMethod loadMethod = (EBundleLoadMethod)MainBundleInfo.Bundle.LoadMethod;
+							if (loadMethod == EBundleLoadMethod.LoadFromMemory || loadMethod == EBundleLoadMethod.LoadFromStream)
+							{
+								_steps = ESteps.Unpack;
+								FileLoadPath = MainBundleInfo.Bundle.CachedDataFilePath;
+							}
+							else
+							{
+								_steps = ESteps.LoadFile;
+								FileLoadPath = MainBundleInfo.Bundle.StreamingFilePath;
+							}
+						}
+						else
+						{
+							Debug.Log($"MainBundleInfo.Bundle is not BuildinPatchBundle, to Download, {MainBundleInfo.Bundle.BundleName}, {MainBundleInfo.Bundle.FileHash}");
+
+							_steps = ESteps.Download;
+							FileLoadPath = MainBundleInfo.Bundle.CachedDataFilePath;
+						}
+
+					}
+					else
+                    {
+						Debug.Log("Impl.BundleServices is not HostPlayModeImpl, to Download");
+						_steps = ESteps.Download;
+						FileLoadPath = MainBundleInfo.Bundle.CachedDataFilePath;
+					}
+					
 				}
 				else if (MainBundleInfo.LoadMode == BundleInfo.ELoadMode.LoadFromStreaming)
 				{
@@ -138,17 +170,17 @@ namespace YooAsset
 			// 5. 加载AssetBundle
 			if (_steps == ESteps.LoadFile)
 			{
-#if UNITY_EDITOR
-				// 注意：Unity2017.4编辑器模式下，如果AssetBundle文件不存在会导致编辑器崩溃，这里做了预判。
-				if (System.IO.File.Exists(FileLoadPath) == false)
-				{
-					_steps = ESteps.Done;
-					Status = EStatus.Failed;
-					LastError = $"Not found assetBundle file : {FileLoadPath}";
-					YooLogger.Error(LastError);
-					return;
-				}
-#endif
+//#if UNITY_EDITOR
+//				// 注意：Unity2017.4编辑器模式下，如果AssetBundle文件不存在会导致编辑器崩溃，这里做了预判。
+//				if (System.IO.File.Exists(FileLoadPath) == false)
+//				{
+//					_steps = ESteps.Done;
+//					Status = EStatus.Failed;
+//					LastError = $"Not found assetBundle file : {FileLoadPath}";
+//					YooLogger.Error(LastError);
+//					return;
+//				}
+//#endif
 
 				// 设置下载进度
 				DownloadProgress = 1f;
@@ -299,7 +331,7 @@ namespace YooAsset
 					if (_isShowWaitForAsyncError == false)
 					{
 						_isShowWaitForAsyncError = true;
-						YooLogger.Error($"WaitForAsyncComplete failed ! Try load bundle : {MainBundleInfo.Bundle.BundleName} from remote with sync load method !");
+						YooLogger.Error($"WaitForAsyncComplete failed ! At _steps: {_steps}, Try load bundle : {MainBundleInfo.Bundle.BundleName} hash: {MainBundleInfo.Bundle.FileHash} from remote with sync load method !");
 					}
 					break;
 				}

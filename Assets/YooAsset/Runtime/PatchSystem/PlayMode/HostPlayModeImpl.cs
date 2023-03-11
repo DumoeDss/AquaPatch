@@ -93,6 +93,7 @@ namespace YooAsset
 				return _activeManifest;
 			}
 		}
+
 		public bool IsBuildinPatchBundle(PatchBundle patchBundle)
 		{
 			return _queryServices.QueryStreamingAssets(patchBundle.PackageName, patchBundle.FileName);
@@ -165,12 +166,12 @@ namespace YooAsset
 				if (IsBuildinPatchBundle(patchBundle))
 					continue;
 
-				// 如果未带任何标记，则统一下载
-				if (patchBundle.HasAnyTags() == false)
-				{
-					downloadList.Add(patchBundle);
-				}
-				else
+				//// 如果未带任何标记，则统一下载
+				//if (patchBundle.HasAnyTags() == false)
+				//{
+				//	downloadList.Add(patchBundle);
+				//}
+				//else
 				{
 					// 查询DLC资源
 					if (patchBundle.HasTag(tags))

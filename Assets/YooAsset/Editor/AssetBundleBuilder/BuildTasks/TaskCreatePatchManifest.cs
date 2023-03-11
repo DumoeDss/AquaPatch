@@ -10,8 +10,9 @@ using System.Reflection;
 using UnityEngine;
 using UnityEditor;
 using HybridCLR.Editor;
-using HybridCLR.Extension.Editor;
 using AquaSys.Tools;
+using AquaSys.Patch.Encryption;
+using System.Text;
 
 namespace YooAsset.Editor
 {
@@ -71,7 +72,7 @@ namespace YooAsset.Editor
 					assemblyBundlesDict[patchBundlePair.Key] = new List<string>();
 				assemblyBundlesDict[patchBundlePair.Key].AddRange(assemblyNameList);
 			}
-
+			var assembliesContext = context.GetContextObject<AssembliesContext>();
 			foreach (var patchBundlePair in patchBundleDic)
             {
 				var packageName = patchBundlePair.Key;
@@ -96,48 +97,53 @@ namespace YooAsset.Editor
                     for (int i = 0; i < assemblyBundlesDict[patchManifest.PackageName].Count; i++)
                     {
                         var currentAssemblyName = assemblyBundlesDict[patchManifest.PackageName][i];
-                        //加载Assembly,查看依赖
-                        var dllBytes = File.ReadAllBytes(
-                            BuildConfig.GetHotFixDllsOutputDirByTarget(EditorUserBuildSettings.activeBuildTarget) +
-                            "/" + currentAssemblyName
-                            );
-
-                        var tempAssembly = Assembly.Load(dllBytes);
-                        var assemblyNames = tempAssembly.GetReferencedAssemblies();
-
-                        dependencies[currentAssemblyName] = new List<string>();
-                        weights[currentAssemblyName] = 0;
-
-                        //分析当前Assembly的依赖
-                        foreach (var assemblyName in assemblyNames)
+						//加载Assembly,查看依赖
+						var packageFolder = patchManifest.PackageName == SettingsUtil.HybridCLRSettings.defaultPackageName ? "HotUpdate" : patchManifest.PackageName;
+						var filePath = $"{assembliesContext.hotUpdateRootDir}/{packageFolder}/{assembliesContext.platform}/{currentAssemblyName}.bytes";
+						var dllBytes = AESEncrypt.DecryptFile(filePath, Convert.ToBase64String(Encoding.UTF8.GetBytes(SettingsUtil.HybridCLRSettings.hotUpdateDllPassword)));
+                        try
                         {
-                            var name = assemblyName.Name + ".dll";
-                            //查找是否有跨包依赖
-                            foreach (var item in assemblyBundlesDict)
-                            {
-                                if (item.Value.Contains(name))
-                                {
-                                    if (item.Key == patchManifest.PackageName)
-                                    {
-                                        //对同包的列表进行权重计算
-                                        if (!dependencies.ContainsKey(currentAssemblyName))
-                                        {
-                                            dependencies[currentAssemblyName] = new List<string>();
-                                        }
-                                        dependencies[currentAssemblyName].Add(name);
+							var tempAssembly = Assembly.Load(dllBytes);
+							var assemblyNames = tempAssembly.GetReferencedAssemblies();
+
+							dependencies[currentAssemblyName] = new List<string>();
+							weights[currentAssemblyName] = 0;
+
+							//分析当前Assembly的依赖
+							foreach (var assemblyName in assemblyNames)
+							{
+								var name = assemblyName.Name ;
+								//查找是否有跨包依赖
+								foreach (var item in assemblyBundlesDict)
+								{
+									if (item.Value.Contains(name))
+									{
+										if (item.Key == patchManifest.PackageName)
+										{
+											//对同包的列表进行权重计算
+											if (!dependencies.ContainsKey(currentAssemblyName))
+											{
+												dependencies[currentAssemblyName] = new List<string>();
+											}
+											dependencies[currentAssemblyName].Add(name);
 
 
-                                    }
-                                    else
-                                    {
-                                        //跨包依赖
-                                        dependAssemblyAddressList.Add(
-                                            $"{item.Key}@{assemblyBundleLocation[name]}"
-                                            );
-                                    }
-                                }
-                            }
+										}
+										else
+										{
+											//跨包依赖
+											dependAssemblyAddressList.Add(
+												$"{item.Key}@{assemblyBundleLocation[name]}"
+												);
+										}
+									}
+								}
+							}
+						}catch (Exception ex)
+                        {
+							Debug.LogError($"Assembly.Load Error! {filePath} {ex.ToString()}");
                         }
+                       
                         patchManifest.DependAssemblyAddresses = dependAssemblyAddressList.ToArray();
                     }
 

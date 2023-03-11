@@ -51,6 +51,7 @@ namespace YooAsset.Editor
 			List<IBuildTask> pipeline  = new List<IBuildTask>
 				{
 					new TaskPrepare(), //前期准备工作
+					new TaskBuildAssemblies(), //HybridCLR编译脚本
 					new TaskGetBuildMap(), //获取构建列表
 				};
 
@@ -112,6 +113,7 @@ namespace YooAsset.Editor
 				pipeline = new List<IBuildTask>
 				{
 					new TaskPrepare(), //前期准备工作
+					new TaskBuildAssemblies(), //HybridCLR编译脚本
 					new TaskGetBuildMap(), //获取构建列表
 					new TaskBuilding(), //开始执行构建
 					new TaskVerifyBuildResult(), //验证构建结果
@@ -128,6 +130,7 @@ namespace YooAsset.Editor
 				pipeline = new List<IBuildTask>
 				{
 					new TaskPrepare(), //前期准备工作
+					new TaskBuildAssemblies(), //HybridCLR编译脚本
 					new TaskGetBuildMap(), //获取构建列表
 					new TaskBuilding_SBP(), //开始执行构建
 					new TaskVerifyBuildResult_SBP(), //验证构建结果

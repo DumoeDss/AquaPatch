@@ -157,6 +157,8 @@ namespace YooAsset
 
 					if (_patchBundleCount <= 0)
 					{
+						Manifest.AssemblyAddresses = _buffer.ReadUTF8Array();
+						Manifest.DependAssemblyAddresses = _buffer.ReadUTF8Array();
 						_steps = ESteps.Done;
 						Status = EOperationStatus.Succeed;
 					}

@@ -792,21 +792,23 @@ namespace YooAsset
 
 		bool isAssemblyLoaded;
 		#region 加载脚本
-		public async UniTask LoadAssembly()
+		public async UniTask LoadAssembly(string passwd)
 		{
 #if !UNITY_EDITOR
 			if (!isAssemblyLoaded)
 			{
 				foreach (var assemblyAddress in _playModeServices.ActiveManifest.AssemblyAddresses)
 				{
-					var handle = LoadAssetAsync<TextAsset>(assemblyAddress);
-					await handle;
+					var handle = LoadAssetSync<TextAsset>(assemblyAddress);
+					//await handle.ToUniTask();
 					TextAsset textAsset = handle.AssetObject as TextAsset;
 					var datas = textAsset.bytes;
 					using (MemoryStream ms = new MemoryStream(datas))
 					{
-						var dllBytes = AESEncrypt.Decrypt(ms, "hotfix");
+						var dllBytes = AESEncrypt.Decrypt(ms, passwd);
 						System.Reflection.Assembly.Load(dllBytes);
+                        UnityEngine.Debug.Log("LoadAssembly. :" + assemblyAddress);
+						Array.Clear(dllBytes, 0, dllBytes.Length);
 					}
 					Array.Clear(datas,0, datas.Length);
 					handle.Release();
