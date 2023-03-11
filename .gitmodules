@@ -1,0 +1,3 @@
+[submodule "Packages/HybridCLR"]
+	path = Packages/HybridCLR
+	url = https://github.com/DumoeDss/hybridclr_unity.git
