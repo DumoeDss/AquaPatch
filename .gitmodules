@@ -1,3 +1,3 @@
 [submodule "Assets/HybridCLR"]
 	path = Assets/HybridCLR
-	url = https://github.com/DumoeDss/hybridclr_unity.git#for_aqua_patch
+	url = https://github.com/DumoeDss/hybridclr_unity.git
