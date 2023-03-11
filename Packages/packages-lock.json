@@ -13,6 +13,18 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "com.tuyoogame.yooasset": {
+      "version": "https://github.com/DumoeDss/YooAsset.git?path=Assets/YooAsset#for_aqua_patch",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.scriptablebuildpipeline": "1.20.2",
+        "com.unity.modules.assetbundle": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0",
+        "com.unity.modules.unitywebrequestassetbundle": "1.0.0"
+      },
+      "hash": "6825a2fe96843200fb9d98c28ca95c562dd2f5d7"
+    },
     "com.unity.collab-proxy": {
       "version": "1.17.2",
       "depth": 0,
